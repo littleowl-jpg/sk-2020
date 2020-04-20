@@ -84,7 +84,7 @@
 | Brama         | 10.0.2.2     | default from route table |
 | DNS 1         | 192.168.2.1 | cat /etc/resolv.conf |
 | DNS 2         |  |  |
-                | nslookup *adres strony*| Podaje ip serwera danej stronki |
+|                | nslookup *adres strony*| Podaje ip serwera danej stronki |
 | ------------- |:----:| -----:|
 | Windows | LAN Wi-Fi |  |
 | Adres IP      | 192.168.2.35 | przydzielony przez DHCP |
