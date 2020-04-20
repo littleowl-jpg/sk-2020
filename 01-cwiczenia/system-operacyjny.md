@@ -35,6 +35,7 @@
     17) **Erase the above disk?:** yes
     18) *po instalacji powinno się wyciągnąć z pamięci alpine i uruchomić ponownie* -- tylko czemu usuwać z pamięci(?)
     
+    
    * [Linux Debian](https://www.debian.org/)
    * [Linux CentOS](https://www.centos.org/)
    * Windows 
@@ -77,14 +78,15 @@
 ### Konfiguracja połączenia sieciowego
 
 | Parametr | wartość           | komentarzu |
-| ------------- |:Alpine:| -----:|
+| ------------- |:------:| -----:|
 | Adres IP      | 10.0.2.15 | przydzielony przez DHCP |
 | Maska podsieci| 10.0.2.15/24 | 255.255.255.0        |
 | Brama         | 10.0.2.2     | default from route table |
 | DNS 1         | 192.168.2.1 | cat /etc/resolv.conf |
 | DNS 2         |  |  |
                 | nslookup *adres strony*| Podaje ip serwera danej stronki |
-| ------------- |:Windows:| LAN Wi-Fi:|
+| ------------- |:----:| -----:|
+| Windows | LAN Wi-Fi |  |
 | Adres IP      | 192.168.2.35 | przydzielony przez DHCP |
 | Maska podsieci| 192.168.2.35/24 | 255.255.255.0        |
 | Brama         | 192.168.2.1    | default from route table |
