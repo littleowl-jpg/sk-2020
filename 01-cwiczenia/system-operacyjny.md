@@ -54,6 +54,8 @@
 
 4. Dlaczego umiejętnosci z zakresu sieci komputerowych mogą mi się przydać? :)
 
+To be honest - w sieciah jestem ZIELONA, w liceum za dużo nie miałam i wszystkiego ucze się teraz. Po zdobyciu skrawka teoretycznej wiedzy mogę powiedzieć, że sieci zdecydowanie są przydatne. Nie wiem jeszcze czy będą przydatne dla mnie bo nie zdecydowałam co dokładnie chcę robić w przyszłości ale wiem, ze warto się teraz tego nauczyć i poświęcić czas, choćby dla samej wiedzy. Trochę mi wstyd, że tak mało o tym wiedziałam do tej pory, w sumie nadal mało wiem i nadal mi trochę wstyd ale mam nadzieję, że idę w dobrym kierunku. ;) 
+
 
 ### Charakterystyka systemu operacyjnego
 
