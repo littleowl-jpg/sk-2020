@@ -88,7 +88,7 @@ To be honest - w sieciah jestem ZIELONA, w liceum za dużo nie miałam i wszystk
 | DNS 2         |  |  |
 |                | nslookup *adres strony*| Podaje ip serwera danej stronki |
 | ------------- |:----:| -----:|
-| Windows | LAN Wi-Fi |  |
+| Windows |  | LAN Wi-Fi |
 | Adres IP      | 192.168.2.35 | przydzielony przez DHCP |
 | Maska podsieci| 192.168.2.35/24 | 255.255.255.0        |
 | Brama         | 192.168.2.1    | default from route table |
