@@ -94,6 +94,13 @@ To be honest - w sieciah jestem ZIELONA, w liceum za dużo nie miałam i wszystk
 | Brama         | 192.168.2.1    | default from route table |
 | DNS 1         | 192.168.2.1 | ipconfig -all |
 | DNS 2         |  |  |
+| ------------- |:----:| -----:|
+| Linux Debian |  | |
+| Adres IP      | 10.0.2.15 | przydzielony przez DHCP |
+| Maska podsieci| 10.0.2.15/24 | 255.255.255.0        |
+| Brama         | 10.0.2.2   | default from route table |
+| DNS 1         | 192.168.2.1 | cat /etc/resolv.conf |
+| DNS 2         |  |  |
                 
 
 ### Schemat sieci
