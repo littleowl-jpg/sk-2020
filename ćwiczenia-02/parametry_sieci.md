@@ -29,7 +29,7 @@ Wejściowe parametry sieci
 Weryfikacja połączenia
 
 Polecenie
-```ping *jakaś stronka np. google.pl*
+ping *jakaś stronka np. google.pl*```
 ```
 
 Efekt
