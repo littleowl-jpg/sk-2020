@@ -29,11 +29,11 @@ Wejściowe parametry sieci
 Weryfikacja połączenia
 
 Polecenie
-```
+```ping *jakaś stronka np. google.pl*
 ```
 
 Efekt
-```
+```przesłane zostały pakiety potwierdzające połączenie z internetem
 ```
 
 Statyczna konfiguracja parametrów połączenia
