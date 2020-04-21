@@ -135,19 +135,20 @@ Dlaczego? Jak? Co? :)
 Kiedy chcemy mieć dwa interfejsy (jeden static drugi dhcp) musimy pamiętać, żeby w ustawieniach maszyny dodać karte sieciową NAT
 
 
-``` auto eth0
+```auto eth0
 iface eth0 inet dhcp
-    hostname localhost ```
+    hostname localhost 
     
-``` auto eth1
+auto eth1
 iface eth1 inet static
     address *jakis adres*
-    netmask 255.255.255.0```
-    
+    netmask 255.255.255.0
+
+```   
 Zapisujemy i wykonujemy polecenie (w alpine)
 ```rc-service networking restart```
 
-```
+
 
 ### Warto wiedzieć ###
 
