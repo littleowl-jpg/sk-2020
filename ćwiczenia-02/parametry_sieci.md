@@ -5,7 +5,9 @@
 0. Z wykorzystaniem dowolnych systemów operacyjnych na których potrafisz uruchomić interpreter ``python`` oraz oprogramowania virtualbox odwzoruj poniższy schemat sieci:
 
 W Alpine: 
+
 ```*apk add git*```
+
 ```*apk add python3*```
 
 ![alt text][network]
@@ -14,30 +16,44 @@ W Alpine:
 
 1. na 1 z komputerów zainstaluj i uruchom program ``server.py`` dostępne pod adresem ``https://github.com/jkanclerz/client-server-chat``
 
-Polecenie  ```git clone https://github.com/jkanclerz/client-server-chat```
-Polecenie żeby uruchomić ```python3 serwer.py```
+    Polecenie  ```git clone https://github.com/jkanclerz/client-server-chat```
+
+    Polecenie żeby uruchomić ```python3 serwer.py```
 
 2. na 2 z komputerów zainstaluj i uruchom program ``client.py`` dostępne pod adresem ``https://github.com/jkanclerz/client-server-chat``
 
-Polecenie żeby zainstalować ```git clone https://github.com/jkanclerz/client-server-chat```
-Polecenie żeby uruchomić ```python3 client.py```
+    Polecenie żeby zainstalować ```git clone https://github.com/jkanclerz/client-server-chat```
+    
+    Polecenie żeby uruchomić ```python3 client.py```
 
 3. Manipulując konfiguracją sieci na poziomie virtualbox, uruchom serwer czatu, oraz udostępnij go na wybranym porcie oraz adresie tak aby istniała możliwość połączenia przez inne osoby w obrębie pracowni
 
-Ustawiamy nową sieć NAT w ogólnych ustawieniach VirtualBoxa a potem podłączamy maszyny do tej sieci
+    Ustawiamy nową sieć NAT w ogólnych ustawieniach VirtualBoxa a potem podłączamy maszyny do tej sieci
+    
 
 4. Zainstaluj oprogramowanie serwera HTTP ``nginx`` lub innego, skonfiguruj plik index.html wg instrukcji, sprawdź dostępność strony z wykorzystaniem dowolnego klienta protokołu ``HTTP`` z różnych konfiguracji IP
 
-Za pomocą polecenia ```netstat``` obserwujemy ruch w sieci
-```apk add nginx```
-```rc-services nginx start```
-Po ponownym wyświetleniu netstat zobaczymy nginx działajacego na porcie 80
-Tworzymy stronke:
-```echo "Hello world" > /var/www/index.html``` - czemu taka ścieżka(?)
-```apk add curl``` co to curl? - wyświetla htmla?
-Żeby otworzyć naszą stronkę: ``` curl 127.0.0.1```
+    Za pomocą polecenia ```netstat``` obserwujemy ruch w sieci
+    
+    ```apk add nginx```
+    
+    ```rc-services nginx start```
+    
+    
+    Po ponownym wyświetleniu netstat zobaczymy nginx działajacego na porcie 80
 
-```cat /etc/nginx/conf.d/default.conf```
+    Tworzymy stronke:
+
+    ```echo "Hello world" > /var/www/index.html``` - czemu taka ścieżka(?)
+    
+    ```apk add curl``` co to curl? - wyświetla htmla?
+    
+    Żeby otworzyć naszą stronkę: ``` curl 127.0.0.1```
+    
+
+    ```cat /etc/nginx/conf.d/default.conf```
+    
+    
 
 5. Posługując się programami tj: ``netstat`` lub ``lsof`` sprawdź na jakich portach zostały uruchomione serwery czatu czy HTTP
 
@@ -118,6 +134,7 @@ Dlaczego? Jak? Co? :)
 
 Kiedy chcemy mieć dwa interfejsy (jeden static drugi dhcp) musimy pamiętać, żeby w ustawieniach maszyny dodać karte sieciową NAT
 
+
 ``` auto eth0
 iface eth0 inet dhcp
     hostname localhost ```
@@ -130,9 +147,9 @@ iface eth1 inet static
 Zapisujemy i wykonujemy polecenie (w alpine)
 ```rc-service networking restart```
 
+```
 
-
-### Warto wiedzieć
+### Warto wiedzieć ###
 
 -------------------------
 | Parametr | wartość | komentarz(opcionalny) |
