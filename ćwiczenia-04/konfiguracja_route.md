@@ -26,7 +26,7 @@
 
 ### Zadanie
 
-![zadanie 4](cwiczenia4.svg)
+![zadanie 4](cwiczenia-4-zadanie.svg)
 
 1.
    * Przygotuj konfigurację sieci zgodnie z powyższym diagramem, 
