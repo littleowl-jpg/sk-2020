@@ -6,7 +6,7 @@ Organizacja planuje rozpoczęcie działalności w 3 budynkach, w każdym z nich 
 
 ## Schemat
 
-![zadanie 1](stage-01.svg)
+![zadanie 1](obrazek.svg)
 
 ## Zawartość
 
