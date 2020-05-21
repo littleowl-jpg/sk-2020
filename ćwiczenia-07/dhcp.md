@@ -15,7 +15,24 @@
   
 2. 
    * Z wykorzystaniem ``virtualbox`` przygotuj podobną konfigurację gdzie w jednej sieci pracuje komputer pełniący rolę serwera DHCP oraz komputer klienta
+   
+   Instalowanie dhcp: ``apk add dhcp``
+   
+   
    * Skonfiguruj serwer DHCP aby przypisywał konfigurację IP zgodnie z obraną adresacją
+   
+   Tworzymy dhcp.conf i wpisujemy jak w dokumentacji
+   ``subnet 10.10.200.160 netmask 255.255.255.224 {
+   ``range 10.10.200.163 10.10.200.190;
+   ``option routers 10.10.200.161
+   ``option domain-name-servers 8.8.8.8,1.1.1.1;
+   ``}``
+   
+   Następnie:
+   
+   ``rc-service dhcpd restart``
+   
+   
    * Zweryfikuj poprawność przypisywanych parametrów na pozostałych komputerach pracujacych w sieci 
 
 ## Parametry konfiguracji DHCP
@@ -25,9 +42,9 @@ Jaki parametry konfiguracji można ustawić z wykorzystaniem DHCP
 | -------------                 |
 | Adres IP                      |
 | Maska podsieci                |
-| |
-| |
-| |
+| Brama domyślna |
+| Liczba hostów których chemy zaadresować|
+| Adres pierwszego hosta|
 | |
 | |
 
