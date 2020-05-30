@@ -8,6 +8,10 @@ W którym miejscu następuje zmaina adresu prywatnego na publiczny?
 
 Podczas przejścia przez domowy router. Zamiana występuje w warstwie sieciowej. 
 
+Zalety NAT:
+- nie trzeba używać adresów publicznych wewnątrz sieci lokalnej,
+- kontrola nad portami
+
 ## Zadanie
 
 ![zadanie 7](nat-1.svg)
