@@ -6,6 +6,8 @@
 
 W którym miejscu następuje zmaina adresu prywatnego na publiczny?
 
+Podczas przejścia przez domowy router. Zamiana występuje w warstwie sieciowej. 
+
 ## Zadanie
 
 ![zadanie 7](nat-1.svg)
