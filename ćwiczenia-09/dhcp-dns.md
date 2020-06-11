@@ -17,7 +17,8 @@
    * Zweryfikuj poprawność połączenia z siecią internet dla ``PC0``
       * adresacja
    * Skonfiguruj serwer ``DHCP`` dla ``PC0`` tak aby wszystkie nowo przyłączone urządzenia uzyskały właściwą konfigurację ``ip`` 
-  
+  ``service dhcpd restart``
+  ``iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE``
 
       | klucz    |  wartość   |
       | ------------- |:-------------|  
@@ -27,7 +28,11 @@
       |   ``dns``  |  ``{wlasciwe ip}``                 |
      
    * Uruchom usługe ``dnsmasq`` dla ``PC0``
+   ``apk add dnsmasq`` 
+   `` service dnsmasq start``
    * Skonfiguruj usługę ``DHCP`` tak aby ``PC1`` zawsze uzyskał ten sam adres IP
+   ``cat /etc/resolv.conf``
+   
    * Dokonaj odpowiedniej modyfikacji konfiguracji tak aby z dowolnego komputera w sieci 
    przy komunikacji z adresem ``chat.mydomain.local`` został rozwinięty na adres komputera ``PC1``
    * Uruchom usługę ``http-chat`` na komputerze ``PC1``
