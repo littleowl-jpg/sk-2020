@@ -23,6 +23,29 @@ W sieci pracują komputery biurowe oraz urządzenia siecowe współdzielące zas
 
 ## Zawartość dokumentacji
 
+# Wersja 1.
+
+ * Charakterystyka rozwiazania 
+ * Adresy sieci IP
+ - adres sieci: ``149.100.8.0``
+ - maska podsieci: ``255.255.252.0``
+ - adres rozgłoszeniowy: ``149.100.11.255``
+ - max. ilość hostów: 1022
+ - adres bramy: ``149.100.8.1``
+ - rezerwacja adresu dla drukarki: ``149.100.8.3``
+ - rezerwacja adresu dla serwera: ``149.100.8.2``
+ W związku z powyższym, adresację DHCP rozpoczynamy od adresu ``149.100.8.4``
+ 
+ * Oprogramowanie wykorzystane do realizacji poszczególnych wymagań
+ * Kluczowa konfiguracja oprogramowania pozwalająca na odtworzenie stanu po reinstalacji środowiska
+    1. Konfiguracja NAT z iptables 
+    2. Konfiguracja DHCP
+    3. Konfiguracja DNS
+    4. Konfiguracja interfejsów sieciowych
+    5. Inne jeżeli wykorzystane
+
+# Wersja 2.
+
  * Charakterystyka rozwiazania 
  * Adresy sieci IP
  * Oprogramowanie wykorzystane do realizacji poszczególnych wymagań
@@ -32,4 +55,3 @@ W sieci pracują komputery biurowe oraz urządzenia siecowe współdzielące zas
     3. Konfiguracja DNS
     4. Konfiguracja interfejsów sieciowych
     5. Inne jeżeli wykorzystane
-
