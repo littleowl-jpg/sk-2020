@@ -43,6 +43,7 @@ W sieci pracują komputery biurowe oraz urządzenia siecowe współdzielące zas
  * Kluczowa konfiguracja oprogramowania pozwalająca na odtworzenie stanu po reinstalacji środowiska
     1. Konfiguracja NAT z iptables 
     2. Konfiguracja DHCP
+    
       - statyczne przydzielenie adresu IP serwerowi: ``149.100.8.2``
       - włączenie usługi DHCP oraz wybranie interfejsu sieciowego
       - określenie:
@@ -51,6 +52,7 @@ W sieci pracują komputery biurowe oraz urządzenia siecowe współdzielące zas
          - od jakiego adresu IP ma rozpocząć się adresowanie, 
          - maski podsieci, 
          - ilości hostów, które chcemy zaadresować
+      - konfiguracja, czyli włączenie adresowania DHCP w urządzeniach, które chcemy zaadresować
          
     3. Konfiguracja DNS
     4. Konfiguracja interfejsów sieciowych
