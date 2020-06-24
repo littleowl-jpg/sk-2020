@@ -85,17 +85,22 @@ W sieci pracują komputery biurowe oraz urządzenia siecowe współdzielące zas
     1. Konfiguracja NAT z iptables 
     2. Konfiguracja DHCP
       - instalacja serweru DHCP: ``apk add dhcp``
-      - konfigurujemy nasz serwer: wchodzimy do katalogu ``/etc/dhcp`` i wykonujemy komende ``vi dhcp.config``
+      - konfigurujemy nasz serwer: wchodzimy do katalogu ``/etc/dhcp`` i wykonujemy komende ``vi dhcpd.config``
       - wpisujemy: ``subnet 149.100.8.0 netmask 255.255.252.0 {``
       
        (określamy zakres przydzielanych adresów) range 149.100.8.4 149.100.11.254;
        
-       (określamy adres routera) option router 149.100.8.1;
+       (określamy adres routera) option routers 149.100.8.1;
        
        (określamy DNS-y) option domain-name-servers 8.8.8.8, 1.1.1.1;
       }``
       
+      - restartujemy nasz serwer: ``rc-service dhcpd restart``
+      
       
     3. Konfiguracja DNS
+      - jest wyżej ;)
+      
     4. Konfiguracja interfejsów sieciowych
+      - szczerze? to u mnie wystarczyło uruchomić klienta więc chyba ok? xd 
     5. Inne jeżeli wykorzystane
