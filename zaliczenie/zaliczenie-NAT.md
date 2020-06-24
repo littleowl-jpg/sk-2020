@@ -88,11 +88,11 @@ W sieci pracują komputery biurowe oraz urządzenia siecowe współdzielące zas
       - konfigurujemy nasz serwer: wchodzimy do katalogu ``/etc/dhcp`` i wykonujemy komende ``vi dhcp.config``
       - wpisujemy: ``subnet 149.100.8.0 netmask 255.255.252.0 {``
       
-       (określamy zakres przydzielanych adresów) ``range 149.100.8.4 149.100.11.254;``
+       (określamy zakres przydzielanych adresów) range 149.100.8.4 149.100.11.254;
        
-       (określamy adres routera) ``option router 149.100.8.1;``
+       (określamy adres routera) option router 149.100.8.1;
        
-       (określamy DNS-y) ``option domain-name-servers 8.8.8.8, 1.1.1.1;
+       (określamy DNS-y) option domain-name-servers 8.8.8.8, 1.1.1.1;
       }``
       
       
