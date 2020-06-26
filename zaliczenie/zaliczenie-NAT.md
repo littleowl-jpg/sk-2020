@@ -23,7 +23,7 @@ W sieci pracują komputery biurowe oraz urządzenia siecowe współdzielące zas
 
 ## Zawartość dokumentacji
 
-# Wersja 1.
+# Wersja 1. - tu coś mi nie wyszło, ale zostawiam bo może jeszcze spróbuję ale cisco coś się na mnie obraził. W kazdym razie niżej jest zadanie wykonane w VirtualBoxie :) 
 
  * Charakterystyka rozwiazania 
  * Adresy sieci IP
@@ -84,6 +84,11 @@ W sieci pracują komputery biurowe oraz urządzenia siecowe współdzielące zas
  
  * Kluczowa konfiguracja oprogramowania pozwalająca na odtworzenie stanu po reinstalacji środowiska
     1. Konfiguracja NAT z iptables 
+         - ``sysctl net.ipv4.ip_forward=1`` - żeby serwer mógł "forwardować" pakiety
+         - pobieramy pakiet iptables - ``apk add iptables``
+         - ``iptables -t nat -A POSTROUTING -o eth0 -j MASQERADE`` - zamienia adres prywatny na publiczny dzięki czemu nat działa <3
+         
+         
     2. Konfiguracja DHCP
       - instalacja serweru DHCP: ``apk add dhcp``
       - konfigurujemy nasz serwer: wchodzimy do katalogu ``/etc/dhcp`` i wykonujemy komende ``vi dhcpd.config``
@@ -93,14 +98,24 @@ W sieci pracują komputery biurowe oraz urządzenia siecowe współdzielące zas
        
        (określamy adres routera) option routers 149.100.8.1;
        
-       (określamy DNS-y) option domain-name-servers 8.8.8.8, 1.1.1.1;
+       (określamy DNS-y) option domain-name-servers 149.100.8.1,8.8.8.8, 1.1.1.1;
       }``
       
       - restartujemy nasz serwer: ``rc-service dhcpd restart``
+     
       
       
     3. Konfiguracja DNS
-      - jest wyżej ;)
+    
+      - pobieramy serwer dnsmasq - ``apk add dnsmasq``
+      - uruchamiamy go - ``service hndmasq start``
+      - dopisujemy do ``dhcps.conf`` i restartujemy dhcpd
+      - sprawdzamy na którymś z urządzeń w sieci czy działa - ``cat /etc/resolv.conf``
+      - żeby dokonać translacji pewnych domen chodzimy w `` vi /etc/hosts``, ja przekazałam adresy: ``86.161.255.32``, ``86.161.255.33``, ``86.161.255.34`` kolejno do domen w            poleceniu,
+      - restartujemy dnsmasq - ``service dnsmasq restart``
+      - poleceniem ``nslookup [domena]`` możemy sprawdzić czy wszystko działa
+      
+      
       
     4. Konfiguracja interfejsów sieciowych
       - szczerze? to u mnie wystarczyło uruchomić klienta więc chyba ok? xd 
