@@ -75,7 +75,7 @@ W sieci pracują komputery biurowe oraz urządzenia siecowe współdzielące zas
         - rezerwacja adresu dla drukarki: ``149.100.8.3``
         - rezerwacja adresu dla serwera: ``149.100.8.2``
    
- W związku z powyższym, adresację DHCP rozpoczynamy od adresu ``149.100.8.4``
+    W związku z powyższym, adresację DHCP rozpoczynamy od adresu ``149.100.8.4``
  
  
  * Oprogramowanie wykorzystane do realizacji poszczególnych wymagań
@@ -84,6 +84,7 @@ W sieci pracują komputery biurowe oraz urządzenia siecowe współdzielące zas
  
  * Kluczowa konfiguracja oprogramowania pozwalająca na odtworzenie stanu po reinstalacji środowiska
     1. Konfiguracja NAT z iptables 
+    
            - ``sysctl net.ipv4.ip_forward=1`` - żeby serwer mógł "forwardować" pakiety
            - pobieramy pakiet iptables - ``apk add iptables``
            - ``iptables -t nat -A POSTROUTING -o eth0 -j MASQERADE`` - zamienia adres prywatny na publiczny dzięki czemu nat działa <3
@@ -94,12 +95,12 @@ W sieci pracują komputery biurowe oraz urządzenia siecowe współdzielące zas
         - konfigurujemy nasz serwer: wchodzimy do katalogu ``/etc/dhcp`` i wykonujemy komende ``vi dhcpd.config``
         - wpisujemy: ``subnet 149.100.8.0 netmask 255.255.252.0 {``
       
-       (określamy zakres przydzielanych adresów) range 149.100.8.4 149.100.11.254;
+         ``(określamy zakres przydzielanych adresów) range 149.100.8.4 149.100.11.254;
        
-       (określamy adres routera) option routers 149.100.8.1;
+         ``(określamy adres routera) option routers 149.100.8.1;
        
-       (określamy DNS-y) option domain-name-servers 149.100.8.1,8.8.8.8, 1.1.1.1;
-      }``
+         ``(określamy DNS-y) option domain-name-servers 149.100.8.1,8.8.8.8, 1.1.1.1;
+         ``}``
       
         - restartujemy nasz serwer: ``rc-service dhcpd restart``
      
