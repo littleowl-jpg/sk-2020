@@ -45,21 +45,21 @@ W sieci pracują komputery biurowe oraz urządzenia siecowe współdzielące zas
     2. Konfiguracja DHCP
     
     
-      - statyczne przydzielenie adresu IP serwerowi: ``149.100.8.2``
-      - włączenie usługi DHCP oraz wybranie interfejsu sieciowego
-      - określenie:
-         - adresu bramy, 
-         - DNS, 
-         - od jakiego adresu IP ma rozpocząć się adresowanie, 
-         - maski podsieci, 
-         - ilości hostów, które chcemy zaadresować
-      - konfiguracja, czyli włączenie adresowania DHCP w urządzeniach, które chcemy zaadresować
+        - statyczne przydzielenie adresu IP serwerowi: ``149.100.8.2``
+        - włączenie usługi DHCP oraz wybranie interfejsu sieciowego
+        - określenie:
+           - adresu bramy, 
+           - DNS, 
+           - od jakiego adresu IP ma rozpocząć się adresowanie, 
+           - maski podsieci, 
+           - ilości hostów, które chcemy zaadresować
+        - konfiguracja, czyli włączenie adresowania DHCP w urządzeniach, które chcemy zaadresować
       
     
     3. Konfiguracja DNS
     4. Konfiguracja interfejsów sieciowych
     
-      - włączenie możliwości adresacji DHCP
+        - włączenie możliwości adresacji DHCP
       
     5. Inne jeżeli wykorzystane
 
@@ -67,32 +67,32 @@ W sieci pracują komputery biurowe oraz urządzenia siecowe współdzielące zas
 
  * Charakterystyka rozwiazania 
  * Adresy sieci IP
-      - adres sieci: ``149.100.8.0``
-      - maska podsieci: ``255.255.252.0``
-      - adres rozgłoszeniowy: ``149.100.11.255``
-      - max. ilość hostów: 1022
-      - adres bramy: ``149.100.8.1``
-      - rezerwacja adresu dla drukarki: ``149.100.8.3``
-      - rezerwacja adresu dla serwera: ``149.100.8.2``
+        - adres sieci: ``149.100.8.0``
+        - maska podsieci: ``255.255.252.0``
+        - adres rozgłoszeniowy: ``149.100.11.255``
+        - max. ilość hostów: 1022
+        - adres bramy: ``149.100.8.1``
+        - rezerwacja adresu dla drukarki: ``149.100.8.3``
+        - rezerwacja adresu dla serwera: ``149.100.8.2``
    
  W związku z powyższym, adresację DHCP rozpoczynamy od adresu ``149.100.8.4``
  
  
  * Oprogramowanie wykorzystane do realizacji poszczególnych wymagań
  
- Oracle VM VirtualBox
+   Oracle VM VirtualBox
  
  * Kluczowa konfiguracja oprogramowania pozwalająca na odtworzenie stanu po reinstalacji środowiska
     1. Konfiguracja NAT z iptables 
-         - ``sysctl net.ipv4.ip_forward=1`` - żeby serwer mógł "forwardować" pakiety
-         - pobieramy pakiet iptables - ``apk add iptables``
-         - ``iptables -t nat -A POSTROUTING -o eth0 -j MASQERADE`` - zamienia adres prywatny na publiczny dzięki czemu nat działa <3
+           - ``sysctl net.ipv4.ip_forward=1`` - żeby serwer mógł "forwardować" pakiety
+           - pobieramy pakiet iptables - ``apk add iptables``
+           - ``iptables -t nat -A POSTROUTING -o eth0 -j MASQERADE`` - zamienia adres prywatny na publiczny dzięki czemu nat działa <3
          
          
     2. Konfiguracja DHCP
-      - instalacja serweru DHCP: ``apk add dhcp``
-      - konfigurujemy nasz serwer: wchodzimy do katalogu ``/etc/dhcp`` i wykonujemy komende ``vi dhcpd.config``
-      - wpisujemy: ``subnet 149.100.8.0 netmask 255.255.252.0 {``
+        - instalacja serweru DHCP: ``apk add dhcp``
+        - konfigurujemy nasz serwer: wchodzimy do katalogu ``/etc/dhcp`` i wykonujemy komende ``vi dhcpd.config``
+        - wpisujemy: ``subnet 149.100.8.0 netmask 255.255.252.0 {``
       
        (określamy zakres przydzielanych adresów) range 149.100.8.4 149.100.11.254;
        
@@ -101,22 +101,22 @@ W sieci pracują komputery biurowe oraz urządzenia siecowe współdzielące zas
        (określamy DNS-y) option domain-name-servers 149.100.8.1,8.8.8.8, 1.1.1.1;
       }``
       
-      - restartujemy nasz serwer: ``rc-service dhcpd restart``
+        - restartujemy nasz serwer: ``rc-service dhcpd restart``
      
       
       
     3. Konfiguracja DNS
     
-      - pobieramy serwer dnsmasq - ``apk add dnsmasq``
-      - uruchamiamy go - ``service hndmasq start``
-      - dopisujemy do ``dhcps.conf`` i restartujemy dhcpd
-      - sprawdzamy na którymś z urządzeń w sieci czy działa - ``cat /etc/resolv.conf``
-      - żeby dokonać translacji pewnych domen chodzimy w `` vi /etc/hosts``, ja przekazałam adresy: ``86.161.255.32``, ``86.161.255.33``, ``86.161.255.34`` kolejno do domen w            poleceniu,
-      - restartujemy dnsmasq - ``service dnsmasq restart``
-      - poleceniem ``nslookup [domena]`` możemy sprawdzić czy wszystko działa
+        - pobieramy serwer dnsmasq - ``apk add dnsmasq``
+        - uruchamiamy go - ``service hndmasq start``
+        - dopisujemy do ``dhcps.conf`` i restartujemy dhcpd
+        - sprawdzamy na którymś z urządzeń w sieci czy działa - ``cat /etc/resolv.conf``
+        - żeby dokonać translacji pewnych domen chodzimy w `` vi /etc/hosts``, ja przekazałam adresy: ``86.161.255.32``, ``86.161.255.33``, ``86.161.255.34`` kolejno do domen w            poleceniu,
+        - restartujemy dnsmasq - ``service dnsmasq restart``
+        - poleceniem ``nslookup [domena]`` możemy sprawdzić czy wszystko działa
       
       
       
     4. Konfiguracja interfejsów sieciowych
-      - szczerze? to u mnie wystarczyło uruchomić klienta więc chyba ok? xd 
+        - szczerze? to u mnie wystarczyło uruchomić klienta więc chyba ok? xd 
     5. Inne jeżeli wykorzystane
